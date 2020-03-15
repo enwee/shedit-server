@@ -1,24 +1,19 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const draftRouter = require("./routes/article.route");
+const draftsRouter = require("./routes/drafts.route");
+const publishsRouter = require("./routes/publishs.route");
+const { corsOptions } = require("./utils/constants");
 const cors = require("cors");
-
-const corsOptions = {
-  origin: [process.env.FRONTEND_LOCALHOST, process.env.EDITOR_HEROKU_URL],
-  credentials: true
-};
 
 app.use(cors(corsOptions));
 app.use(express.json());
 
-app.use("/articles", draftRouter);
+app.use("/drafts", draftsRouter);
+app.use("/publishs", publishsRouter);
 
 app.get("/", (req, res) => {
-  res.send({
-    0: "GET /",
-    1: "POST /articles"
-  });
+  res.json("GET / is working");
 });
 
 app.use((err, req, res, next) => {

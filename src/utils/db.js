@@ -1,13 +1,7 @@
 const mongoose = require("mongoose");
+const { mongoOptions } = require("./constants");
 
-const mongoOptions = {
-  useNewUrlParser: true, // prevent deprecation warnings
-  useUnifiedTopology: true,
-  useFindAndModify: false, // For find one and update
-  useCreateIndex: true // for creating index with unique
-};
-
-const dbName = "Snapi";
+const dbName = "shedit";
 const dbUrl = process.env.MONGODB_URI || "mongodb://localhost:27017/" + dbName;
 mongoose.connect(dbUrl, mongoOptions);
 const db = mongoose.connection;

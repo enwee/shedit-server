@@ -1,25 +1,23 @@
 {
   "name": "snapi",
   "version": "1.0.0",
-  "description": "## Story wall",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
     "test:coverage": "jest --coverage",
     "start": "node src/index.js",
+    "start:dev": "nodemon ./src/index.js",
+    "start:db": "mongod -dbpath ~/data/db",
     "lint": "eslint src/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/snaphunters/snapi.git"
+    "url": "git+https://github.com/enwee/shedit-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/snaphunters/snapi/issues"
-  },
-  "homepage": "https://github.com/snaphunters/snapi#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

@@ -1,17 +1,27 @@
 const mongoose = require("mongoose");
 
-const topicSubtopicSchema = new mongoose.Schema({
-  title: { type: String, required: true, unique: true },
-  type: String,
-  blockArray: []
-});
+const blockSchema = new mongoose.Schema(
+  {
+    uuid: { type: String, required: true, unique: true },
+    ckString: String
+  },
+  { _id: false }
+);
+
+const topicSchema = new mongoose.Schema(
+  {
+    uuid: { type: String, required: true, unique: true },
+    name: { type: String, required: true, trim: true },
+    blockArray: [blockSchema]
+  },
+  { _id: false }
+);
 
 const articleSchema = new mongoose.Schema(
   {
-    id: { type: String, required: true, unique: true },
+    uuid: { type: String, required: true, unique: true },
     title: { type: String, required: true, unique: true, trim: true },
-    topicAndSubtopicArray: [topicSubtopicSchema],
-    isPublished: { type: Boolean, default: false }
+    topicArray: [topicSchema]
   },
   { timestamps: true }
 );
