@@ -3,6 +3,8 @@ const corsOptions = {
   credentials: true
 };
 
+const maxBodyPayload = "5mb";
+
 const mongoOptions = {
   useNewUrlParser: true, // prevent deprecation warnings
   useUnifiedTopology: true,
@@ -17,6 +19,7 @@ const topicArrayOnly = `topicArray -${mongo_IdField}`;
 
 module.exports = {
   corsOptions,
+  maxBodyPayload,
   mongoOptions,
   titleUuidOnly,
   topicArrayOnly

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Publish } = require("../models/article.model");
-const wrapAsync = require("../utils/wrapAsync");
+const { wrapAsync } = require("../utils/functions");
 
 router.get(
   "/",
