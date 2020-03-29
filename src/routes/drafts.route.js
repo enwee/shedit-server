@@ -19,7 +19,9 @@ router
   .get(
     wrapAsync(async (req, res, next) => {
       const regex = new RegExp(`^${req.params.id}$`, "i");
-      const draft = await Draft.findOne({ uuid: regex }, topicArrayOnly);
+      const draft = await Draft.findOne({ uuid: regex }, topicArrayOnly, {
+        lean: true
+      });
       res.send(draft);
     })
   )

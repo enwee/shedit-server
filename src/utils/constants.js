@@ -1,5 +1,5 @@
 const corsOptions = {
-  origin: [process.env.FRONTEND_LOCALHOST, process.env.EDITOR_NETLIFY_URL],
+  origin: [process.env.FRONTEND_URL, process.env.EDITOR_NETLIFY_URL],
   credentials: true
 };
 
