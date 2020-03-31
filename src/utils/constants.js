@@ -3,7 +3,7 @@ const corsOptions = {
   credentials: true
 };
 
-const maxBodyPayload = "5mb";
+const maxBodyPayload = "6mb";
 
 const mongoOptions = {
   useNewUrlParser: true, // prevent deprecation warnings
